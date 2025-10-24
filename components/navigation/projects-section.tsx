@@ -28,79 +28,41 @@ export function ProjectsSection() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "E-Commerce estilo Apple Store",
       description: "Plataforma completa de comercio electrónico con panel de administración",
       longDescription:
         "Una aplicación full-stack con autenticación, carrito de compras, procesamiento de pagos y dashboard administrativo completo.",
-      image: "/modern-ecommerce-dashboard.png",
+      image: "/images/iphones.png",
       technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind"],
       category: "fullstack",
       githubUrl: "#",
-      liveUrl: "#",
-      featured: true,
+      liveUrl: "https://celulares-landing.vercel.app/",
+      featured: false,
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Aplicación de gestión de tareas con colaboración en tiempo real",
+      title: "E-Commerce estilo landing page",
+      description: "Landing page para una tienda de comercio de mates argentinos",
       longDescription:
-        "Sistema de gestión de proyectos con funcionalidades de tiempo real, asignación de tareas y seguimiento de progreso.",
-      image: "/task-management-app.png",
+        "Landing page atractiva y responsiva para una tienda de comercio de mates argentinos, con secciones de productos, informacion, y contacto.",
+      image: "/images/mates.png",
       technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
       category: "fullstack",
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://github.com/ulieet/cuchamates",
+      liveUrl: "https://cuchamates.vercel.app/",
       featured: true,
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Dashboard interactivo del clima con visualizaciones avanzadas",
+      title: "Landing page para empresa de software",
+      description: "Landing page para una empresa de software con servicios innovadores",
       longDescription:
-        "Aplicación que muestra datos meteorológicos con gráficos interactivos y predicciones detalladas.",
-      image: "/weather-dashboard.png",
-      technologies: ["React", "D3.js", "OpenWeather API", "Styled Components"],
+        "Landing page moderna y atractiva para una empresa de software, destacando sus servicios y proyectos.",
+      image: "/images/ignatech.png",
+      technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
       category: "frontend",
       githubUrl: "#",
-      liveUrl: "#",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "API REST Blog",
-      description: "API completa para sistema de blog con autenticación JWT",
-      longDescription:
-        "Backend robusto con endpoints para gestión de posts, usuarios, comentarios y sistema de autenticación seguro.",
-      image: "/api-documentation-interface.png",
-      technologies: ["Node.js", "Express", "JWT", "PostgreSQL", "Swagger"],
-      category: "backend",
-      githubUrl: "#",
-      liveUrl: "#",
-      featured: false,
-    },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      description: "Sitio web portfolio responsive con animaciones CSS avanzadas",
-      longDescription: "Portfolio personal con diseño moderno, animaciones fluidas y optimización para SEO.",
-      image: "/modern-portfolio-website.png",
-      technologies: ["HTML", "CSS", "JavaScript", "GSAP", "Sass"],
-      category: "frontend",
-      githubUrl: "#",
-      liveUrl: "#",
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "Chat Application",
-      description: "Aplicación de chat en tiempo real con salas y notificaciones",
-      longDescription:
-        "Sistema de mensajería instantánea con salas privadas, notificaciones push y historial de mensajes.",
-      image: "/chat-application-interface.png",
-      technologies: ["React", "Socket.io", "Node.js", "Redis", "PWA"],
-      category: "fullstack",
-      githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: "https://ignatechgroup-final.vercel.app/",
       featured: true,
     },
   ]
@@ -170,7 +132,7 @@ export function ProjectsSection() {
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}
-              className={`group bg-gray-900/50 border-gray-700 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${
+              className={`group bg-gray-900/50 border-gray-700 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 flex flex-col h-full ${
                 isVisible ? "animate-slide-up" : "opacity-0"
               } ${project.featured ? "md:col-span-2 lg:col-span-1" : ""}`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -188,23 +150,13 @@ export function ProjectsSection() {
                 {/* Overlay Actions */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-4">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
-                      asChild
-                    >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm hover:bg-white/30" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                         <Github className="h-4 w-4" />
                       </a>
                     </Button>
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
-                      asChild
-                    >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm hover:bg-white/30" asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </Button>
@@ -219,7 +171,7 @@ export function ProjectsSection() {
                 )}
               </div>
 
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
                   {project.title}
                 </h3>
@@ -242,21 +194,27 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-3">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"
-                    asChild
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
+                <div className="flex space-x-3 mt-auto">
+                  <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent" asChild>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2"
+                    >
+                      <Github className="h-4 w-4" />
                       Código
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-purple-600 hover:bg-purple-700" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Eye className="h-4 w-4 mr-2" />
+
+                  <Button size="sm" className="bg-purple-600 hover:bg-purple-700" asChild>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 text-white"
+                    >
+                      <Eye className="h-4 w-4" />
                       Ver Demo
                     </a>
                   </Button>
