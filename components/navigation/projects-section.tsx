@@ -33,7 +33,7 @@ export function ProjectsSection() {
       longDescription:
         "Una aplicación full-stack con autenticación, carrito de compras, procesamiento de pagos y dashboard administrativo completo.",
       image: "/images/iphones.png",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind"],
+      technologies: ["Next.js", "TypeScript",  "Tailwind CSS", "shadcn"],
       category: "fullstack",
       githubUrl: "#",
       liveUrl: "https://celulares-landing.vercel.app/",
@@ -46,7 +46,7 @@ export function ProjectsSection() {
       longDescription:
         "Landing page atractiva y responsiva para una tienda de comercio de mates argentinos, con secciones de productos, informacion, y contacto.",
       image: "/images/mates.png",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
+      technologies: ["Next.js", "Node.js", "shadcn", "typescript", "Tailwind CSS", "Framer Motion",],
       category: "fullstack",
       githubUrl: "https://github.com/ulieet/cuchamates",
       liveUrl: "https://cuchamates.vercel.app/",
@@ -59,7 +59,20 @@ export function ProjectsSection() {
       longDescription:
         "Landing page moderna y atractiva para una empresa de software, destacando sus servicios y proyectos.",
       image: "/images/ignatech.png",
-      technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+      category: "frontend",
+      githubUrl: "#",
+      liveUrl: "https://ignatechgroup-final.vercel.app/",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "Software para la gestion de un odontologo",
+      description: "Software de gestión para consultorios odontológicos",
+      longDescription:
+        "Aplicación web para la gestión de turnos, pacientes, odontograma, y facturación en consultorios odontológicos.",
+      image: "/images/odontologo.png",
+      technologies: ["React", "JavaScript", "CSS", "Framer Motion", "Vercel"],
       category: "frontend",
       githubUrl: "#",
       liveUrl: "https://ignatechgroup-final.vercel.app/",
@@ -97,10 +110,9 @@ export function ProjectsSection() {
   return (
     <section ref={sectionRef} id="proyectos" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-blue-400 bg-clip-text text-transparent">
               Proyectos Destacados
             </span>
           </h2>
@@ -109,7 +121,7 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Category Filter */}
+      
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
             <Button
@@ -127,7 +139,7 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Projects Grid */}
+  
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <Card
@@ -147,7 +159,6 @@ export function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Overlay Actions */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-4">
                     <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm hover:bg-white/30" asChild>
@@ -163,7 +174,7 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Featured Badge */}
+         
                 {project.featured && (
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-purple-600 text-white">Destacado</Badge>
@@ -180,7 +191,7 @@ export function ProjectsSection() {
                   {hoveredProject === project.id ? project.longDescription : project.description}
                 </p>
 
-                {/* Technologies */}
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <Badge
@@ -193,7 +204,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
+      
                 <div className="flex space-x-3 mt-auto">
                   <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent" asChild>
                     <a
@@ -224,19 +235,19 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Call to Action */}
+     
         <div className="text-center mt-16">
           <p className="text-gray-400 mb-6">¿Interesado en ver más proyectos o colaborar en algo nuevo?</p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            className="bg-blue-400 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
           >
             Ver Más Proyectos
           </Button>
         </div>
       </div>
 
-      {/* Custom Styles */}
+  
       <style jsx>{`
         @keyframes slide-up {
           from { 

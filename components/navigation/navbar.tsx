@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import Logo from "./logo"
-import NavLinks from "./nav-links"
+import Logo from "@/components/navigation/logo"
+import NavLinks, { navItems } from "@/components/navigation/nav-links"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -16,27 +16,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const navItems = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#contacto", label: "Contacto" },
-  ]
-
   return (
     <nav
-      className={`fixed top-0 w-full z-50  transition-colors duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Logo />
 
-        {/* Links desktop centrados */}
-        <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
+        {/* Links a la derecha en desktop */}
+        <div className="hidden md:flex items-center">
           <NavLinks />
         </div>
 
-        {/* Botón mobile */}
+        {/* Botón de menú móvil */}
         <div className="md:hidden">
           <Button
             variant="ghost"
@@ -49,7 +43,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú mobile */}
+      {/* Menú móvil */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 py-2 bg-black/90 backdrop-blur-md rounded-b-lg">
           {navItems.map(({ href, label }) => (
