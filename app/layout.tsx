@@ -5,9 +5,11 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Desarrollador web",
+  title: "portfolioUlises",
   description: "Portfolio profesional de desarrollador web full-stack",
-  generator: "v0.dev",
+   icons: {
+    icon: "/uv.png",
+  },
 };
 
 export default function RootLayout({

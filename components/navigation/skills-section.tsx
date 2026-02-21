@@ -13,6 +13,7 @@ const skills = [
       "Tailwind CSS",
       "HTML5",
       "CSS3",
+      "ShadCn/Radix/UI",
     ],
     color: "text-blue-500",
     dotColor: "bg-blue-500",
@@ -46,7 +47,7 @@ const skills = [
       "Responsive Design",
       "Crystal Reports",
       "OOAD",
-      "SOLID & GRASP Principles, GoF Design Patterns"
+      "SOLID & GRASP , GoF Design Patterns"
       
     ],
     color: "text-purple-500",
@@ -71,7 +72,7 @@ export function SkillsSection() {
   return (
     <section className="w-full py-20 px-4" id="habilidades">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-center mb-4 text-foreground">Habilidades</h2>
+        <h2 className="text-4xl font-bold text-center mb-4 text-foreground mt-12">Habilidades</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Tecnologías y herramientas con las que trabajo
         </p>

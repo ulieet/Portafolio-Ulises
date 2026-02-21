@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="inicio"
-      className="relative flex justify-center overflow-hidden p-50 "
+      className="relative flex justify-center overflow-hidden p-40 "
     >
  
       <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-80"></div>

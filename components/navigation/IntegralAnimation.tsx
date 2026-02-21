@@ -16,7 +16,7 @@ export default function IntegralAnimation() {
   }, [step])
 
   const scrollToContent = () => {
-    const contentElement = document.getElementById("about-content")
+    const contentElement = document.getElementById("about")
     if (contentElement) {
       contentElement.scrollIntoView({ behavior: "smooth", block: "start" })
     }
@@ -44,7 +44,6 @@ export default function IntegralAnimation() {
         </div>
       </div>
 
-      {/* Desliza */}
       <div
         onClick={scrollToContent}
         className="flex flex-col items-center justify-center mt-8 cursor-pointer group"
@@ -60,3 +59,11 @@ export default function IntegralAnimation() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
