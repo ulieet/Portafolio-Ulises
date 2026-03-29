@@ -50,15 +50,10 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="inicio"
-      className="relative flex justify-center overflow-hidden p-40 "
-    >
- 
+      className="relative flex justify-center overflow-hidden p-40 mt-20">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-80"></div>
 
-  
       <Particulas />
-
-  
       <motion.div
         className="relative z-10 text-center text-white max-w-4xl px-4"
         variants={containerVariants}

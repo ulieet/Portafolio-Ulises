@@ -55,7 +55,7 @@ export function AboutSection() {
           {/* Texto */}
           <div className="space-y-6 text-left md:text-center">
             <p className="text-gray-300 text-lg leading-relaxed">
-              Soy Ulises, estudiante de{" "}
+             Hola! soy Ulises, estudiante de{" "}
               <span className="text-white font-semibold">
                 Ingeniería en Sistemas de Información
               </span>{" "}

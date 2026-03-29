@@ -43,15 +43,22 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú móvil */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 py-2 bg-black/90 backdrop-blur-md rounded-b-lg">
           {navItems.map(({ href, label }) => (
             <a
               key={href}
               href={href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md"
+              onClick={(e) => {
+                e.preventDefault();
+                const targetId = href.replace(/.*\#/, "");
+                const elem = document.getElementById(targetId);
+                if (elem) {
+                  elem.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+                setIsMobileMenuOpen(false); 
+              }}
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md cursor-pointer"
             >
               {label}
             </a>

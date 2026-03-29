@@ -14,6 +14,8 @@ const skills = [
       "HTML5",
       "CSS3",
       "ShadCn/Radix/UI",
+      
+      
     ],
     color: "text-blue-500",
     dotColor: "bg-blue-500",
@@ -31,7 +33,8 @@ const skills = [
       "Trello",
       "Vercel",
       "Arduino y STR",
-      "Metodologias agiles (Scrum, Kanban)"
+      "Metodologias agiles (Scrum, Kanban)",
+      "AWS Cloud"
     ],
     color: "text-orange-500",
     dotColor: "bg-orange-500",
@@ -45,6 +48,7 @@ const skills = [
       "Figma",
       "UI/UX",
       "Responsive Design",
+      "Tkinter",
       "Crystal Reports",
       "OOAD",
       "SOLID & GRASP , GoF Design Patterns"
