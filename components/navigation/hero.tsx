@@ -7,7 +7,6 @@ import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import IntegralAnimation from "@/components/navigation/IntegralAnimation"
 import Particulas from "@/components/navigation/particulas"
-import { ChevronDown } from "lucide-react"
 
 const roles = [
   "Desarrollador Full Stack",

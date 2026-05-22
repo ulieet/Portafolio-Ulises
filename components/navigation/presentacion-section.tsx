@@ -67,7 +67,7 @@ export function AboutSection() {
 
             <p className="text-gray-300 text-lg leading-relaxed">
               Actualmente me especializo en el desarrollo de aplicaciones y
-              páginas web responsivas y bien estructuradas, con foco en el{" "}
+              páginas web minimalistas y bien estructuradas, con foco en el{" "}
               <span className="text-blue-500 font-semibold">
                 Frontend
               </span>{" "}

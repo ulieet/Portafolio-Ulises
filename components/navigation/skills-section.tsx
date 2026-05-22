@@ -14,6 +14,7 @@ const skills = [
       "HTML5",
       "CSS3",
       "ShadCn/Radix/UI",
+      "Estandares internacionales WCAG"
       
       
     ],
@@ -28,13 +29,13 @@ const skills = [
       "Docker",
       "Git & GitHub",
       "Postman",
-      "Linux",
-      "VS Code",
+      "Linux/scripting",
       "Trello",
       "Vercel",
-      "Arduino y STR",
+      "Arduino ,STR,PLC",
       "Metodologias agiles (Scrum, Kanban)",
-      "AWS Cloud"
+      "AWS Cloud",
+      "Azure"
     ],
     color: "text-orange-500",
     dotColor: "bg-orange-500",
@@ -46,8 +47,7 @@ const skills = [
       "Enterprise Architect (EA)",
       "UML",
       "Figma",
-      "UI/UX",
-      "Responsive Design",
+      "Responsive Design UI/UX",
       "Tkinter",
       "Crystal Reports",
       "OOAD",

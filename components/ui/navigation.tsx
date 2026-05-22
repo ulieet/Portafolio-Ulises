@@ -24,19 +24,19 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <Link
-                href="#inicio"
+                href="/#inicio"
                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Inicio
               </Link>
               <Link
-                href="#servicios"
+                href="/#servicios"
                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Servicios
               </Link>
               <Link
-                href="#contacto"
+                href="/#contacto"
                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Contacto

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "e-commerce-apple",
+    "title": "E-Commerce estilo Apple Store",
+    "description": "Plataforma moderna de comercio electrónico.",
+    "image": "/images/iphones.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
+    "category": "fullstack",
+    "liveUrl": "https://celulares-landing.vercel.app/",
+    "featured": false,
+    "hasDetails": false
+  },
+  {
+    "id": "cuchamates",
+    "title": "E-Commerce Landing Page",
+    "description": "Landing page para tienda de mates argentinos.",
+    "image": "/images/mates.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Radix"],
+    "category": "fullstack",
+    "liveUrl": "https://cuchamates.vercel.app/",
+    "featured": true,
+    "hasDetails": false
+  },
+  {
+    "id": "ignatech",
+    "title": "Landing Page Empresa de Software",
+    "description": "Sitio corporativo moderno y profesional.",
+    "image": "/images/ignatech.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
+    "category": "frontend",
+    "liveUrl": "https://ignatechgroup-final.vercel.app/",
+    "featured": true,
+    "hasDetails": false
+  },
+  {
+    "id": "web-corporativa",
+    "title": "Sitio Web Corporativo",
+    "description": "Web empresarial orientada a servicios profesionales.",
+    "image": "/images/empresarial.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
+    "category": "frontend",
+    "liveUrl": "https://boceto-landing.vercel.app/",
+    "featured": true,
+    "hasDetails": false
+  },
+  {
+    "id": "landing-construccion",
+    "title": "Landing Page Empresa de Construcción",
+    "description": "Landing personalizada adaptada a identidad visual.",
+    "image": "/images/box.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Radix"],
+    "category": "frontend",
+    "liveUrl": "https://boxsteel.vercel.app/",
+    "featured": true,
+    "hasDetails": false
+  },
+  {
+    "id": "web-estudio-contable",
+    "title": "Sitio Web Estudio Contable",
+    "description": "Web profesional para estudio contable.",
+    "image": "/images/contador.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
+    "category": "frontend",
+    "liveUrl": "https://contador-landing-gilt.vercel.app/",
+    "featured": false,
+    "hasDetails": false
+  },
+  {
+    "id": "neuroclinic",
+    "title": "NeuroSoft / NeuroClinic",
+    "subtitle": "Sistema Integral de Gestión de Historias Clínicas con Extracción NLP",
+    "description": "Aplicacion web end-to-end diseñada para optimizar la digitalización  y análisis de historias clinicas en el ámbito de la neurología y salud general. El núcleo innovador radica en su capacidad para procesar archivos no estructurados (PDF/Word) y extraer automáticamente entidades críticas mediante NLP y lenguaje automatico.",
+  
+    "technologies": ["FastAPI", "Next.js", "TypeScript", "Python", "Tailwind CSS", "Shadcn UI", "NLP", "JSON Storage"],
+    "category": "Arquitectura Backend & Fullstack",
+    "liveUrl": "#",
+    "featured": true,
+    "hasDetails": true,
+    "academicContext": "Proyecto Final para la materia Seminario Integrador — Habilitación del título de Analista en Sistemas de Información.",
+    "features": [
+      {
+        "title": "Motor de Extracción y NLP",
+        "description": "Pipeline en el backend con módulos de normalización de texto, segmentación de documentos y algoritmos de coincidencia basados en patrones clínicos para identificar diagnósticos."
+      },
+      {
+        "title": "Gestión Modular de Pacientes",
+        "description": "Interfaz fluida para la administración del ciclo de vida del paciente, permitiendo visualizar de manera unificada su información personal, alarmas médicas y cronología interactiva."
+      },
+      {
+        "title": "Filtros Avanzados y Reportes",
+        "description": "Herramientas de búsqueda avanzada que permiten cruzar variables clínicas complejas y generar reportes generales sintéticos basados en estructuras de datos optimizadas."
+      },
+      {
+        "title": "Arquitectura Desacoplada",
+        "description": "Diseño basado en Clean Architecture con un backend independiente en FastAPI y persistencia ágil mediante almacenamiento estructurado en JSON, garantizando un despliegue eficiente."
+      }
+    ],
+    "architecture": {
+      "backend": "FastAPI estructurado en capas (API Routers, Schemas de validación Pydantic, Services para lógica de negocio y Utils para algoritmos de parsing).",
+      "frontend": "Next.js con App Router, interfaces completamente tipadas con TypeScript, hooks personalizados para estados dinámicos y componentes Shadcn UI."
+    },
+      "images": [
+  "/images/neuro-dashboard.png",
+  "/images/neuro-pacientes.png",
+  "/images/neuro-nlp-modulo.png"
+]
+  },
+  {
+    "id": "algoritmos-optimizacion",
+    "title": "Resolutor de Operaciones",
+    "subtitle": "Herramienta de Optimización e Investigación Operativa",
+    "description": "Una herramienta interactiva desarrollada para resolver problemas matemáticos complejos de la materia Operaciones de Investigación. Incluye calculadoras automatizadas para el método Simplex y algoritmos para determinar distribuciones estadísticas como Normal y Chi-cuadrado.",
+    "image": "",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Matemática Aplicada"],
+    "category": "Lógica Algorítmica & Frontend",
+    "liveUrl": "#",
+    "featured": false,
+    "hasDetails": true,
+    "academicContext": "Proyecto desarrollado para la materia Operaciones de Investigación.",
+    "features": [
+      {
+        "title": "Cálculo de Método Simplex",
+        "description": "Implementación del algoritmo Simplex para programación lineal, mostrando tablas de iteración paso a paso para maximizar o minimizar funciones objetivo."
+      },
+      {
+        "title": "Distribuciones Estadísticas",
+        "description": "Módulos integrados para procesar y calcular variables de distribución Normal y pruebas de bondad de ajuste mediante Chi-cuadrado."
+      }
+    ],
+    "architecture": {
+      "frontend": "Desarrollado íntegramente en el cliente con Next.js, utilizando estados complejos de React para manejar las matrices matemáticas y renderizar dinámicamente las tablas de resultados."
+    },
+    "images": []
+  }
+]
