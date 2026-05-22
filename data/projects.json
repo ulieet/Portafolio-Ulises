@@ -69,6 +69,7 @@
     "id": "neuroclinic",
     "title": "NeuroSoft / NeuroClinic",
     "subtitle": "Sistema Integral de Gestión de Historias Clínicas con Extracción NLP",
+    "accentColor": "oklch(0.65 0.12 280)",
     "description": "Aplicacion web end-to-end diseñada para optimizar la digitalización  y análisis de historias clinicas en el ámbito de la neurología y salud general. El núcleo innovador radica en su capacidad para procesar archivos no estructurados (PDF/Word) y extraer automáticamente entidades críticas mediante NLP y lenguaje automatico.",
   
     "technologies": ["FastAPI", "Next.js", "TypeScript", "Python", "Tailwind CSS", "Shadcn UI", "NLP", "JSON Storage"],
@@ -109,6 +110,7 @@
     "id": "algoritmos-optimizacion",
     "title": "Resolutor de Operaciones",
     "subtitle": "Herramienta de Optimización e Investigación Operativa",
+    "accentColor": "oklch(0.65 0.12 160)",
     "description": "Una herramienta interactiva desarrollada para resolver problemas matemáticos complejos de la materia Operaciones de Investigación. Incluye calculadoras automatizadas para el método Simplex y algoritmos para determinar distribuciones estadísticas como Normal y Chi-cuadrado.",
     "image": "",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Matemática Aplicada"],

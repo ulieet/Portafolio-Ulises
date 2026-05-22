@@ -3,17 +3,13 @@
 import React from "react"
 import { motion, Variants, Transition } from "framer-motion"
 import { TypingAnimation } from "@/components/ui/typing-animation"
-import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
-import IntegralAnimation from "@/components/navigation/IntegralAnimation"
-import Particulas from "@/components/navigation/particulas"
 
 const roles = [
-  "Desarrollador Full Stack",
-  "Frontend Developer",
-  "Analista en sistemas",
-  "Python Developer",
-  "Estudiante de ingeniería en sistemas",
+  "Systems Analysis Specialist",
+  "Full Stack Developer",
+  "Python & Logic Enthusiast",
+  "Engineering Student",
 ]
 
 const transitionConfig: Transition = {
@@ -44,61 +40,57 @@ const itemVariants: Variants = {
   },
 }
 
-
 const Hero: React.FC = () => {
   return (
     <section 
       id="inicio"
-      className="relative flex justify-center overflow-hidden p-40 mt-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black opacity-80"></div>
-
-      <Particulas />
+      className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden !py-0 grid-pattern"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
+      
       <motion.div
-        className="relative z-10 text-center text-white max-w-4xl px-4"
+        className="relative z-10 max-w-5xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-    
+      
+
         <motion.h1
-          className="text-4xl sm:text-6xl font-bold mb-4"
+          className="text-6xl sm:text-8xl lg:text-[10rem] font-bold tracking-tighter mb-10 text-gradient leading-[1.1] pb-4"
           variants={itemVariants}
         >
           Ulises Vetere
         </motion.h1>
 
-    
-        <motion.div className="mb-6" variants={itemVariants}>
-          <TypingAnimation texts={roles} />
-        </motion.div>
-
-      
-        <motion.div variants={itemVariants}>
-          <Separator className="my-8 bg-gray-700 max-w-md mx-auto" />
+        <motion.div className="mb-14" variants={itemVariants}>
+          <div className="text-xl sm:text-3xl text-muted-foreground/80 font-medium tracking-tight">
+            <TypingAnimation texts={roles} />
+          </div>
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+          className="flex flex-col sm:flex-row gap-5 justify-center"
           variants={itemVariants}
         >
           <Button
             asChild
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+            size="lg"
+            className="rounded-full px-10 h-14 text-base font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500"
           >
-            <a href="#proyectos">Ver Proyectos</a>
+            <a href="#proyectos">Explorar proyectos</a>
           </Button>
 
-          <Button asChild variant="secondary">
-          <a href="https://www.linkedin.com/in/ulises-v%C3%A9tere-4900b4270/" target="_blank" rel="noopener noreferrer">
-            Contacto
-          </a>
-        </Button>
-
-        </motion.div>
-
-    
-        <motion.div variants={itemVariants}>
-          <IntegralAnimation />
+          <Button 
+            asChild 
+            variant="outline"
+            size="lg"
+            className="rounded-full px-10 h-14 text-base font-bold border-border/50 bg-background/50 backdrop-blur-md hover:bg-secondary hover:border-foreground/20 transition-all duration-500"
+          >
+            <a href="https://www.linkedin.com/in/ulises-v%C3%A9tere-4900b4270/" target="_blank" rel="noopener noreferrer">
+              Conectar en LinkedIn
+            </a>
+          </Button>
         </motion.div>
       </motion.div>
     </section>

@@ -3,9 +3,11 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-gray-600">© 2026 Ulises Vétere. Todos los derechos reservados.</p>
+    <footer className="bg-background border-t border-border py-12">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <p className="text-muted-foreground text-sm font-medium">
+          © 2026 Portfolio<span className="text-foreground">  Ulises Vétere</span>. 
+        </p>
       </div>
     </footer>
   )
