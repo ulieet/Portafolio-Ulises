@@ -57,7 +57,7 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     
-    const sectionIds = ["inicio", "about", "habilidades", "proyectos"];
+    const sectionIds = ["inicio", "about", "habilidades", "proyectos", "experimentos", "contacto"];
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -97,22 +97,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 md:top-8 left-0 right-0 z-50 mx-auto w-[92vw] md:w-auto max-w-fit px-3 md:px-6 py-1.5 md:py-2 rounded-full border border-border/40 glass ${
+      className={`fixed top-4 md:top-8 left-0 right-0 z-50 mx-auto w-[94vw] md:w-auto max-w-fit px-2.5 md:px-6 py-1 md:py-2 rounded-full border border-border/40 glass ${
         isScrolled 
           ? "shadow-2xl shadow-primary/5 -translate-y-1" 
           : "translate-y-0"
       }`}
       style={{ transform: "translateZ(0)" }}
     >
-      <div className="flex items-center gap-2 md:gap-8 h-12 md:h-14">
+      <div className="flex items-center gap-1.5 md:gap-8 h-12 md:h-14">
         <Logo />
 
         {/* Navigation & Theme Toggle - Always visible */}
-        <div className="flex items-center gap-1 md:gap-4 min-w-0">
+        <div className="flex items-center gap-1 md:gap-4 min-w-0 flex-1 md:flex-initial">
           <div className="min-w-0 overflow-hidden flex-1">
             <NavLinks activeSection={activeSection} onNavClick={handleNavClick} />
           </div>
-          <div className="h-6 md:h-8 w-[1px] bg-border/40 mx-1 md:mx-2 shrink-0" />
+          <div className="h-6 md:h-8 w-[1px] bg-border/40 mx-0.5 md:mx-2 shrink-0" />
           <ThemeToggle />
         </div>
       </div>

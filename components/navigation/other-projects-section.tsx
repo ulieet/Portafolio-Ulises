@@ -10,7 +10,7 @@ export function OtherProjectsSection() {
   const advancedProjects = projectsData.filter(project => project.hasDetails)
 
   return (
-    <section className="py-24 px-6 bg-secondary/5 relative overflow-hidden">
+    <section id="experimentos" className="py-24 px-6 bg-secondary/5 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">

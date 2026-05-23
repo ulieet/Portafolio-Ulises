@@ -6,6 +6,7 @@ export const navItems = [
   { href: "/#about", label: "Sobre mí" },
   { href: "/#habilidades", label: "Habilidades" },
   { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#contacto", label: "Contacto" },
 ]
 
 export default function NavLinks({ 
@@ -41,7 +42,7 @@ export default function NavLinks({
   };
 
   return (
-    <div className="flex items-center relative px-1 py-1 bg-muted/20 md:bg-muted/50 rounded-full overflow-x-auto no-scrollbar scroll-smooth touch-pan-x">
+    <div className="flex items-center relative px-0.5 py-0.5 md:px-1 md:py-1 bg-muted/20 md:bg-muted/50 rounded-full overflow-x-auto no-scrollbar scroll-smooth touch-pan-x">
       {navItems.map((link) => {
         const isActive = activeSection === link.href || (activeSection === "" && link.href === "/#inicio");
         return (
@@ -49,7 +50,7 @@ export default function NavLinks({
             key={link.href}
             href={link.href}
             onClick={(e) => handleScroll(e, link.href)}
-            className={`relative z-10 px-3.5 md:px-5 py-2.5 md:py-2 text-[11px] md:text-sm font-bold rounded-full transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 touch-manipulation ${
+            className={`relative z-10 px-2.5 md:px-5 py-2 md:py-2 text-[10px] md:text-sm font-bold rounded-full transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 touch-manipulation ${
               isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >

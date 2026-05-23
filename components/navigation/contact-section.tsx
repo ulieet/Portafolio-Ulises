@@ -10,7 +10,7 @@ export function ContactSection() {
   }
 
   return (
-    <section className="container mx-auto px-6 text-center grid-pattern">
+    <section id="contacto" className="container mx-auto px-6 text-center grid-pattern">
       <div className="max-w-2xl mx-auto py-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
           // Let's connect

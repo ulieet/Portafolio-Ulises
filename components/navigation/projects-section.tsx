@@ -11,8 +11,8 @@ export function ProjectsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Solo mostramos 3 proyectos destacados en la home para no saturar
-  const displayedProjects = projectsData.filter(project => !project.hasDetails).slice(0, 3)
+  // Solo mostramos 4 proyectos destacados en la home para no saturar
+  const displayedProjects = projectsData.filter(project => !project.hasDetails).slice(0, 4)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,7 +25,7 @@ export function ProjectsSection() {
 
   return (
     <section ref={sectionRef} id="proyectos" className="py-24 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1500px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mb-3">
@@ -44,7 +44,7 @@ export function ProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedProjects.map((project, index) => (
             <div
               key={project.id}

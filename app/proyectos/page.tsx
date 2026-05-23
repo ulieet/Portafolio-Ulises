@@ -15,7 +15,7 @@ export default function ProjectsPage() {
         
         {/* Header Section */}
         <div className="space-y-4 max-w-3xl mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gradient pb-2">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gradient pb-2 mt-50">
             Archivo de <span className="text-muted-foreground/40">Proyectos.</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">

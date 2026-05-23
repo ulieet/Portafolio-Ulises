@@ -68,10 +68,10 @@
   {
     "id": "neuroclinic",
     "title": "NeuroSoft / NeuroClinic",
-    "subtitle": "Sistema Integral de Gestión de Historias Clínicas con Extracción NLP",
+    "subtitle": "Sistema Integral de Gestión de Historias Clínicas con Extracción automatica NLP para su analisis completo",
     "accentColor": "oklch(0.65 0.12 280)",
-    "description": "Aplicacion web end-to-end diseñada para optimizar la digitalización  y análisis de historias clinicas en el ámbito de la neurología y salud general. El núcleo innovador radica en su capacidad para procesar archivos no estructurados (PDF/Word) y extraer automáticamente entidades críticas mediante NLP y lenguaje automatico.",
-  
+    "description": "Aplicacion web diseñada para un cliente neurologo con una necesidad real. Utilizar su gran volumen de informacion de historias clinicas para optimizar la digitalización  y análisis tecnico. El núcleo innovador radica en su capacidad para procesar archivos no estructurados (PDF/Word) y extraer automáticamente entidades críticas mediante NLP y lenguaje automatico.",
+    "image": "/images/neuro/reportegeneral2.png",
     "technologies": ["FastAPI", "Next.js", "TypeScript", "Python", "Tailwind CSS", "Shadcn UI", "NLP", "JSON Storage"],
     "category": "Arquitectura Backend & Fullstack",
     "liveUrl": "#",
@@ -81,19 +81,18 @@
     "features": [
       {
         "title": "Motor de Extracción y NLP",
-        "description": "Pipeline en el backend con módulos de normalización de texto, segmentación de documentos y algoritmos de coincidencia basados en patrones clínicos para identificar diagnósticos."
-      },
-      {
-        "title": "Gestión Modular de Pacientes",
-        "description": "Interfaz fluida para la administración del ciclo de vida del paciente, permitiendo visualizar de manera unificada su información personal, alarmas médicas y cronología interactiva."
+        "description": "Pipeline en el backend con módulos de normalización de texto, segmentación de documentos y algoritmos de coincidencia basados en patrones clínicos para identificar diagnósticos.",
+        "image": "/images/neuro/Casosdeuso.png"
       },
       {
         "title": "Filtros Avanzados y Reportes",
-        "description": "Herramientas de búsqueda avanzada que permiten cruzar variables clínicas complejas y generar reportes generales sintéticos basados en estructuras de datos optimizadas."
+        "description": "Herramientas de búsqueda avanzada que permiten cruzar variables clínicas complejas y generar reportes generales sintéticos basados en estructuras de datos optimizadas.",
+        "image": "/images/neuro/reportegeneral2.png"
       },
       {
-        "title": "Arquitectura Desacoplada",
-        "description": "Diseño basado en Clean Architecture con un backend independiente en FastAPI y persistencia ágil mediante almacenamiento estructurado en JSON, garantizando un despliegue eficiente."
+        "title": "Diseñado a medida",
+        "description": "Diseño basado en Clean Architecture con un backend independiente en FastAPI y persistencia ágil mediante almacenamiento estructurado en JSON, garantizando un despliegue eficiente.",
+        "image": "/images/neuro/DER.png"
       }
     ],
     "architecture": {
@@ -101,9 +100,44 @@
       "frontend": "Next.js con App Router, interfaces completamente tipadas con TypeScript, hooks personalizados para estados dinámicos y componentes Shadcn UI."
     },
       "images": [
-  "/images/neuro-dashboard.png",
-  "/images/neuro-pacientes.png",
-  "/images/neuro-nlp-modulo.png"
+  {
+    "url": "/images/neuro/dash.png",
+    "description": "Dashboard principal con vista general de estadísticas y métricas clave del sistema."
+  },
+  {
+    "url": "/images/neuro/importar.png",
+    "description": "Importacion automatica de las historias clinicas con sus distintos formatos."
+  },
+  {
+    "url": "/images/neuro/procesar.png",
+    "description": "Procesamiento de documentos."
+  },
+  {
+    "url": "/images/neuro/pacientes.png",
+    "description": "Módulo de gestión de pacientes con acceso rápido a su historial y otros datos."
+  },
+   {
+    "url": "/images/neuro/detallepacientes.png",
+    "description": "Detalle de pacientes."
+  },
+  {
+    "url": "/images/neuro/historiasclinicas.png",
+    "description": "Historias clinicas importadas."
+  },
+  {
+    "url": "/images/neuro/detallehistoriasclinicas.png",
+    "description": "Detalle de historias clinicas"
+  },
+  {
+    "url": "/images/neuro/analisispacientes.png",
+    "description": "Analisis automatico de diferentes datos medicos obtenidos de las historias clinicas"
+  },
+  {
+    "url": "/images/neuro/reportegeneral.png",
+    "description": "Reportes generales en base a todos los pacientes cargados, deteccion de datos clinicos y exportacion a pdf"
+  }
+
+  
 ]
   },
   {

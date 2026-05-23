@@ -51,8 +51,8 @@ const Hero: React.FC = () => {
       <div className="relative z-10 w-full max-w-5xl mx-auto will-change-transform">
         <motion.h1
           className="inline-block text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 md:mb-8 text-gradient leading-tight md:leading-[1.1] pb-2 md:pb-4"
-          initial={{ opacity: 0.1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ 
             duration: 0.8,
             ease: "easeOut"
@@ -63,8 +63,8 @@ const Hero: React.FC = () => {
 
         <motion.div 
           className="mb-8 md:mb-10"
-          initial={{ opacity: 0.1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="text-sm sm:text-2xl text-muted-foreground/80 font-medium tracking-tight min-h-[4rem] flex items-center justify-center">
