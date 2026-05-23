@@ -8,25 +8,25 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative px-6 overflow-hidden bg-secondary/10 grid-pattern"
+      className="relative py-12 px-6 overflow-hidden bg-secondary/10 grid-pattern"
     >
       <div className="absolute top-1/4 right-0 text-[15rem] math-integral text-primary/5 select-none pointer-events-none -rotate-12 translate-x-1/4 hidden lg:block">
         ∫ u dv = uv - ∫ v du
       </div>
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
             <div>
-              <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-muted-foreground mb-6">
-                Sobre mí
+              <h2 className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-4">
+                Un poco de mi historia
               </h2>
-              <h3 className="text-5xl md:text-6xl font-bold tracking-tighter leading-[1.2] text-gradient pb-2">
-                Pasión por crear experiencias <span className="text-muted-foreground/60">web excepcionales.</span>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tighter leading-[1.2] text-gradient pb-2">
+                Sobre <span className="text-muted-foreground/60">mi.</span>
               </h3>
 
             </div>
             
-            <div className="space-y-8 text-xl leading-relaxed text-muted-foreground/90">
+            <div className="space-y-6 text-lg leading-relaxed text-muted-foreground/90">
               <p>
                 Hola! soy <span className="text-foreground font-bold">Ulises</span>, estudiante de{" "}
                 <span className="text-foreground font-semibold">

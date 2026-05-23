@@ -7,7 +7,7 @@ import { ContactSection } from "@/components/navigation/contact-section"
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col">
       <Hero />
       <SectionDivider label="01" title="Background" />
       <AboutSection />
@@ -27,7 +27,7 @@ export default function HomePage() {
 function SectionDivider({ label, title }: { label: string, title: string }) {
   return (
     <div className="container mx-auto px-6">
-      <div className="flex items-center gap-4 py-8">
+      <div className="flex items-center gap-4 py-4">
         <span className="text-[10px] font-mono text-muted-foreground/40 font-bold">{label}</span>
         <div className="h-[1px] flex-1 bg-border/40"></div>
         <span className="text-[10px] font-mono text-muted-foreground/40 font-bold uppercase tracking-widest">{title}</span>

@@ -44,39 +44,44 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="inicio"
-      className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden !py-0 grid-pattern"
+      className="relative flex flex-col items-center justify-center min-h-[85dvh] px-6 text-center py-12 md:py-20 grid-pattern overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background pointer-events-none"></div>
       
-      <motion.div
-        className="relative z-10 max-w-5xl"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-      
-
+      <div className="relative z-10 w-full max-w-5xl mx-auto will-change-transform">
         <motion.h1
-          className="text-6xl sm:text-8xl lg:text-[10rem] font-bold tracking-tighter mb-10 text-gradient leading-[1.1] pb-4"
-          variants={itemVariants}
+          className="inline-block text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 md:mb-8 text-gradient leading-tight md:leading-[1.1] pb-2 md:pb-4"
+          initial={{ opacity: 0.1, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.8,
+            ease: "easeOut"
+          }}
         >
           Ulises Vetere
         </motion.h1>
 
-        <motion.div className="mb-14" variants={itemVariants}>
-          <div className="text-xl sm:text-3xl text-muted-foreground/80 font-medium tracking-tight">
+        <motion.div 
+          className="mb-8 md:mb-10"
+          initial={{ opacity: 0.1, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="text-sm sm:text-2xl text-muted-foreground/80 font-medium tracking-tight min-h-[4rem] flex items-center justify-center">
             <TypingAnimation texts={roles} />
           </div>
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-5 justify-center"
-          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           <Button
             asChild
             size="lg"
-            className="rounded-full px-10 h-14 text-base font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500"
+            className="w-full sm:w-auto rounded-full px-8 md:px-10 h-12 md:h-14 text-sm md:text-base font-bold shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <a href="#proyectos">Explorar proyectos</a>
           </Button>
@@ -85,14 +90,14 @@ const Hero: React.FC = () => {
             asChild 
             variant="outline"
             size="lg"
-            className="rounded-full px-10 h-14 text-base font-bold border-border/50 bg-background/50 backdrop-blur-md hover:bg-secondary hover:border-foreground/20 transition-all duration-500"
+            className="w-full sm:w-auto rounded-full px-8 md:px-10 h-12 md:h-14 text-sm md:text-base font-bold border-border/50 bg-background/50 backdrop-blur-md hover:bg-secondary active:scale-95 transition-all duration-300"
           >
             <a href="https://www.linkedin.com/in/ulises-v%C3%A9tere-4900b4270/" target="_blank" rel="noopener noreferrer">
-              Conectar en LinkedIn
+              Visitar LinkedIn
             </a>
           </Button>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }

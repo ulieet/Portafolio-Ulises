@@ -7,10 +7,10 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
-  title: "portfolioUlises",
-  description: "Portfolio profesional de desarrollador web full-stack",
+  title: "UV ",
+  description: "Portfolio de estudiantes de ingenieria en sistemas Ulises Vetere",
    icons: {
-    icon: "/uv.png",
+    icon: "/images/uv.png",
   },
 };
 

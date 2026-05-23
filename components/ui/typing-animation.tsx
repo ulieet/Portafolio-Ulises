@@ -38,10 +38,10 @@ export function TypingAnimation({ texts, className = "" }: TypingAnimationProps)
   }, [displayText, currentIndex, isDeleting, texts])
 
   return (
-    <div className={`h-16 sm:h-20 flex items-center justify-center ${className}`}>
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-400">
+    <div className={`min-h-[4rem] sm:min-h-[5rem] flex items-center justify-center px-4 overflow-hidden ${className}`}>
+      <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-blue-400 text-center leading-tight will-change-contents">
         {displayText}
-        <span className="animate-pulse">|</span>
+        <span className="animate-pulse ml-1 opacity-70">|</span>
       </h2>
     </div>
   )

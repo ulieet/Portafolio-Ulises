@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.99 0.005 80); /* Very subtle warm tint */
+  --background: oklch(0.97 0.005 80); /* Slightly darker background for light mode */
   --foreground: oklch(0.15 0.01 240);
-  --card: oklch(1 0 0);
+  --card: oklch(0.99 0.005 80);
   --card-foreground: oklch(0.15 0.01 240);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.99 0.005 80);
   --popover-foreground: oklch(0.15 0.01 240);
-  --primary: oklch(0.35 0.05 250); /* Refined professional blue */
+  --primary: oklch(0.25 0.01 240); /* Sophisticated dark gray instead of blue */
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.01 250); /* Soft cool secondary */
-  --secondary-foreground: oklch(0.2 0.02 250);
-  --muted: oklch(0.94 0.01 250);
-  --muted-foreground: oklch(0.5 0.02 250);
-  --accent: oklch(0.92 0.03 250); /* Elegant soft accent */
-  --accent-foreground: oklch(0.2 0.02 250);
+  --secondary: oklch(0.92 0.01 240); /* Slightly darker secondary */
+  --secondary-foreground: oklch(0.2 0.02 240);
+  --muted: oklch(0.9 0.01 240);
+  --muted-foreground: oklch(0.45 0.02 240);
+  --accent: oklch(0.88 0.03 240);
+  --accent-foreground: oklch(0.2 0.02 240);
   --destructive: oklch(0.6 0.18 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0.01 250);
-  --input: oklch(0.9 0.01 250);
-  --ring: oklch(0.35 0.05 250);
+  --border: oklch(0.85 0.01 240); /* Stronger border for better contrast */
+  --input: oklch(0.85 0.01 240);
+  --ring: oklch(0.25 0.01 240);
   --radius: 1.25rem;
 
   /* Project Specific Base Colors */
@@ -32,25 +32,25 @@
 }
 
 .dark {
-  --background: oklch(0.18 0.015 250); /* Softer deep charcoal/navy */
+  --background: oklch(0.22 0.015 250); /* Slightly lighter background for dark mode */
   --foreground: oklch(0.95 0.01 250);
-  --card: oklch(0.22 0.02 250); /* Slightly lighter surfaces */
+  --card: oklch(0.26 0.02 250); /* Adjusted surfaces */
   --card-foreground: oklch(0.95 0.01 250);
-  --popover: oklch(0.18 0.015 250);
+  --popover: oklch(0.22 0.015 250);
   --popover-foreground: oklch(0.95 0.01 250);
-  --primary: oklch(0.7 0.08 250); /* Brighter primary for dark mode */
-  --primary-foreground: oklch(0.18 0.015 250);
-  --secondary: oklch(0.25 0.02 250);
+  --primary: oklch(0.85 0.01 250); /* Bright gray/silver for dark mode */
+  --primary-foreground: oklch(0.22 0.015 250);
+  --secondary: oklch(0.3 0.02 250);
   --secondary-foreground: oklch(0.95 0.01 250);
-  --muted: oklch(0.25 0.02 250);
-  --muted-foreground: oklch(0.65 0.02 250);
-  --accent: oklch(0.28 0.03 250);
+  --muted: oklch(0.3 0.02 250);
+  --muted-foreground: oklch(0.7 0.02 250);
+  --accent: oklch(0.35 0.03 250);
   --accent-foreground: oklch(0.95 0.01 250);
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.28 0.02 250);
-  --input: oklch(0.28 0.02 250);
-  --ring: oklch(0.7 0.08 250);
+  --border: oklch(0.35 0.02 250);
+  --input: oklch(0.35 0.02 250);
+  --ring: oklch(0.85 0.01 250);
 }
 
 @theme inline {
@@ -80,42 +80,93 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-vibrant: oklch(0.65 0.25 260); /* Vibrant Blue/Indigo */
+  --animate-bounce-click: bounce-click 1.5s infinite ease-in-out;
+
+  @keyframes bounce-click {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-12px) scale(1.05);
+    }
+  }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Use dvh for better mobile support */
+    min-height: 100dvh;
   }
   section {
-    @apply py-24 md:py-32 relative;
+    @apply py-20 md:py-32 relative;
+    /* Hardware acceleration for sections on mobile */
+    transform: translateZ(0);
   }
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
   }
   
   .glass {
-    @apply bg-background/60 backdrop-blur-xl border border-border/40 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-background/70 border border-border/40 shadow-sm;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.4s ease, 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+  }
+
+  @media (hover: hover) {
+    .glass:hover {
+      @apply shadow-md bg-background/80;
+    }
   }
 
   .premium-card {
-    @apply bg-card border border-border/40 shadow-sm hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-500;
+    @apply bg-card border border-border/40 shadow-sm transition-all duration-500;
+    will-change: transform, box-shadow;
+  }
+
+  @media (hover: hover) {
+    .premium-card:hover {
+      @apply shadow-2xl shadow-primary/5 -translate-y-1;
+    }
   }
 
   .text-gradient {
-    @apply bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--foreground) 0%, color-mix(in oklch, var(--foreground), transparent 40%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--foreground);
+    display: inline-block;
   }
 
   .grid-pattern {
     background-image: radial-gradient(var(--border) 1px, transparent 1px);
     background-size: 40px 40px;
+    opacity: 0.4;
   }
 
   .math-integral {
@@ -124,10 +175,7 @@
     opacity: 0.1;
     pointer-events: none;
     user-select: none;
-  }
-
-  .nav-indicator {
-    @apply absolute bottom-1.5 h-1 bg-primary rounded-full transition-all duration-500 ease-in-out;
+    will-change: transform;
   }
 }
 
@@ -161,4 +209,5 @@
 
 html {
   scroll-behavior: smooth;
+  @apply overflow-x-hidden;
 }

@@ -39,8 +39,8 @@
     "image": "/images/empresarial.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
     "category": "frontend",
-    "liveUrl": "https://boceto-landing.vercel.app/",
-    "featured": true,
+    "liveUrl": "https://empresa-x-landing.vercel.app/",
+    "featured": false,
     "hasDetails": false
   },
   {
@@ -107,8 +107,8 @@
 ]
   },
   {
-    "id": "algoritmos-optimizacion",
-    "title": "Resolutor de Operaciones",
+    "id": "OdontoLeto",
+    "title": "OdontoLeto",
     "subtitle": "Herramienta de Optimización e Investigación Operativa",
     "accentColor": "oklch(0.65 0.12 160)",
     "description": "Una herramienta interactiva desarrollada para resolver problemas matemáticos complejos de la materia Operaciones de Investigación. Incluye calculadoras automatizadas para el método Simplex y algoritmos para determinar distribuciones estadísticas como Normal y Chi-cuadrado.",
@@ -118,7 +118,7 @@
     "liveUrl": "#",
     "featured": false,
     "hasDetails": true,
-    "academicContext": "Proyecto desarrollado para la materia Operaciones de Investigación.",
+    "academicContext": "Proyecto desarrollado para la materia Desarrollo de Software",
     "features": [
       {
         "title": "Cálculo de Método Simplex",

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Logo from "@/components/navigation/logo"
@@ -12,12 +12,20 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("/#inicio")
+  const isManualScrolling = useRef(false)
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
   const pathname = usePathname()
-  const router = useRouter()
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", onScroll)
+    const onScroll = () => {
+      // Use a slightly larger threshold and passive listener for performance
+      if (window.scrollY > 20) {
+        if (!isScrolled) setIsScrolled(true)
+      } else {
+        if (isScrolled) setIsScrolled(false)
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
     
     const isHomePage = pathname === "/"
 
@@ -31,16 +39,20 @@ export default function Navbar() {
     // Intersection Observer to track active section
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -70% 0px",
-      threshold: 0
+      rootMargin: "-30% 0px -30% 0px", 
+      threshold: [0, 0.1, 0.5]
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(`/#${entry.target.id}`);
-        }
-      });
+      if (isManualScrolling.current) return;
+
+      const visibleEntries = entries.filter(e => e.isIntersecting);
+      if (visibleEntries.length > 0) {
+        const bestEntry = visibleEntries.reduce((prev, curr) => 
+          curr.intersectionRatio > prev.intersectionRatio ? curr : prev
+        );
+        setActiveSection(`/#${bestEntry.target.id}`);
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -54,71 +66,56 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     }
-  }, [pathname])
+  }, [pathname, isScrolled])
 
-  const handleMobileNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const isHomePage = pathname === "/"
-    const targetId = href.split("#")[1]
+    const isHashLink = href.startsWith("/#")
     
-    if (isHomePage) {
+    if (isHomePage && isHashLink) {
+      e.preventDefault();
+      
+      // Lock observer updates
+      isManualScrolling.current = true;
+      setActiveSection(href);
+      
+      const targetId = href.split("#")[1]
       const elem = document.getElementById(targetId);
       if (elem) {
         elem.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    } else {
-      router.push(href)
+
+      // Unlock after scroll finishes
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => {
+        isManualScrolling.current = false;
+      }, 1000);
     }
-    setIsMobileMenuOpen(false); 
   };
 
   return (
     <nav
-      className={`fixed top-8 left-0 right-0 z-50 transition-all duration-700 mx-auto max-w-fit px-4 py-1.5 rounded-full border border-border/40 glass ${
+      className={`fixed top-4 md:top-8 left-0 right-0 z-50 mx-auto w-[92vw] md:w-auto max-w-fit px-3 md:px-6 py-1.5 md:py-2 rounded-full border border-border/40 glass ${
         isScrolled 
-          ? "shadow-2xl shadow-primary/5 -translate-y-2 scale-95" 
-          : "scale-100"
+          ? "shadow-2xl shadow-primary/5 -translate-y-1" 
+          : "translate-y-0"
       }`}
+      style={{ transform: "translateZ(0)" }}
     >
-      <div className="flex items-center gap-6 h-11">
+      <div className="flex items-center gap-2 md:gap-8 h-12 md:h-14">
         <Logo />
 
-        {/* Desktop Navigation & Theme Toggle */}
-        <div className="hidden md:flex items-center gap-4">
-          <NavLinks activeSection={activeSection} />
-          <div className="h-6 w-[1px] bg-border/40 mx-2" />
+        {/* Navigation & Theme Toggle - Always visible */}
+        <div className="flex items-center gap-1 md:gap-4 min-w-0">
+          <div className="min-w-0 overflow-hidden flex-1">
+            <NavLinks activeSection={activeSection} onNavClick={handleNavClick} />
+          </div>
+          <div className="h-6 md:h-8 w-[1px] bg-border/40 mx-1 md:mx-2 shrink-0" />
           <ThemeToggle />
-        </div>
-
-        {/* Mobile Toggle & Menu */}
-        <div className="md:hidden flex items-center gap-3">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full"
-          >
-            {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-          </Button>
         </div>
       </div>
-
-      {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-4 p-3 glass rounded-[2rem] shadow-2xl md:hidden min-w-[200px]">
-          {navItems.map(({ href, label }) => (
-            <a
-              key={href}
-              href={href}
-              onClick={(e) => handleMobileNav(e, href)}
-              className="block px-6 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-2xl transition-all duration-300 text-sm font-medium"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      )}
     </nav>
   )
 }
