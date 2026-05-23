@@ -150,7 +150,7 @@
   "subtitle": "Plataforma integral para la gestión de consultorios odontológicos",
   "accentColor": "oklch(0.65 0.12 160)",
   "description": "Plataforma web orientada a odontólogos y ortodoncistas para gestionar pacientes, tratamientos y la evolución clínica a través de imágenes y registros cronológicos, optimizando la comunicación y organización de turnos.",
-  "image": "/images/odontoleto/odontograma.png",
+  "image": "/images/odontoleto/odontograma.PNG",
   "technologies": [
     "React.js",
     "JavaScript",
@@ -194,32 +194,32 @@
       "alt": "Vista del inicio de sesión del sistema OdontoLeto"
     },
     {
-      "url": "/images/odontoleto/dashboard.png",
+      "url": "/images/odontoleto/dashboard.PNG",
       "description": "Dashboard Principal (Home)",
       "alt": "Vista principal del sistema con el resumen del consultorio"
     },
     {
-      "url": "/images/odontoleto/pacientes.png",
+      "url": "/images/odontoleto/pacientes.PNG",
       "description": "Gestión de Pacientes",
       "alt": "Sección del listado y administración de pacientes"
     },
     {
-      "url": "/images/odontoleto/detallepaciente.png",
+      "url": "/images/odontoleto/detallepaciente.PNG",
       "description": "Vista general del paciente",
       "alt": "Vista general del paciente "
     },
     {
-      "url": "/images/odontoleto/odontograma.png",
+      "url": "/images/odontoleto/odontograma.PNG",
       "description": "Odontograma por paciente completamente editable",
       "alt": "Odontograma paciente"
     },
      {
-      "url": "/images/odontoleto/turnos.png",
+      "url": "/images/odontoleto/turnos.PNG",
       "description": "Gestion de turnos con calendario y recordatorios",
       "alt": "Turnoscalendario"
     },
      {
-      "url": "/images/odontoleto/tratamiento.png",
+      "url": "/images/odontoleto/tratamiento.PNG",
       "description": "Seccion de registro de tratamiento",
       "alt": "Registrar tratamiento"
     }
