@@ -57,18 +57,18 @@ export function AboutSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <SkillCard
               icon={<Code2 className="w-5 h-5" />}
-              title="Full Stack Developer"
-              subtitle="Especializado en Frontend"
+              title="Full Stack Developer / Systems Analyst"
+              subtitle="Con profundo interes en Frontend"
             />
             <SkillCard
               icon={<GraduationCap className="w-5 h-5" />}
               title="Estudiante"
-              subtitle="4to año Ing. en Sistemas"
+              subtitle="4to año Ing. en Sistemas Ingles B2"
             />
             <SkillCard
               icon={<Lightbulb className="w-5 h-5" />}
               title="Aprendizaje"
-              subtitle="Intento estar al tanto de las nuevas tecnologias de vanguardia"
+              subtitle="Me interesa explorar tecnologías de vanguardia y actualmente busco nuevas oportunidades."
             />
             <SkillCard
               icon={<MapPin className="w-5 h-5" />}

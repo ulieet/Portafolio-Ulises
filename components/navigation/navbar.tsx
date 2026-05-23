@@ -1,16 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { motion } from "framer-motion"
 import Logo from "@/components/navigation/logo"
 import NavLinks, { navItems } from "@/components/navigation/nav-links"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("/#inicio")
   const isManualScrolling = useRef(false)
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
@@ -18,7 +16,6 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      // Use a slightly larger threshold and passive listener for performance
       if (window.scrollY > 20) {
         if (!isScrolled) setIsScrolled(true)
       } else {
@@ -39,15 +36,17 @@ export default function Navbar() {
     // Intersection Observer to track active section
     const observerOptions = {
       root: null,
-      rootMargin: "-30% 0px -30% 0px", 
-      threshold: [0, 0.1, 0.5]
+      rootMargin: "-45% 0px -45% 0px", // More central focus
+      threshold: [0, 0.1]
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       if (isManualScrolling.current) return;
 
+      // Find the entry that is most visible
       const visibleEntries = entries.filter(e => e.isIntersecting);
       if (visibleEntries.length > 0) {
+        // If multiple, pick the one with the highest intersection ratio
         const bestEntry = visibleEntries.reduce((prev, curr) => 
           curr.intersectionRatio > prev.intersectionRatio ? curr : prev
         );
@@ -77,45 +76,89 @@ export default function Navbar() {
     if (isHomePage && isHashLink) {
       e.preventDefault();
       
-      // Lock observer updates
       isManualScrolling.current = true;
       setActiveSection(href);
       
       const targetId = href.split("#")[1]
       const elem = document.getElementById(targetId);
       if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Calculate offset to account for navbar height or padding
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = elem.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
       }
 
-      // Unlock after scroll finishes
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
       scrollTimeout.current = setTimeout(() => {
         isManualScrolling.current = false;
-      }, 1000);
+      }, 1200); // Slightly longer to ensure scroll finish
     }
   };
 
   return (
-    <nav
-      className={`fixed top-4 md:top-8 left-0 right-0 z-50 mx-auto w-[94vw] md:w-auto max-w-fit px-2.5 md:px-6 py-1 md:py-2 rounded-full border border-border/40 glass ${
-        isScrolled 
-          ? "shadow-2xl shadow-primary/5 -translate-y-1" 
-          : "translate-y-0"
-      }`}
-      style={{ transform: "translateZ(0)" }}
-    >
-      <div className="flex items-center gap-1.5 md:gap-8 h-12 md:h-14">
+    <>
+      {/* Desktop Navbar */}
+      <nav
+        className={`fixed top-8 left-0 right-0 z-50 mx-auto max-w-fit px-6 py-2 rounded-full border border-border/40 glass hidden md:flex items-center gap-8 h-14 ${
+          isScrolled 
+            ? "shadow-2xl shadow-primary/5 -translate-y-1" 
+            : "translate-y-0"
+        }`}
+        style={{ transform: "translateZ(0)" }}
+      >
         <Logo />
-
-        {/* Navigation & Theme Toggle - Always visible */}
-        <div className="flex items-center gap-1 md:gap-4 min-w-0 flex-1 md:flex-initial">
-          <div className="min-w-0 overflow-hidden flex-1">
-            <NavLinks activeSection={activeSection} onNavClick={handleNavClick} />
-          </div>
-          <div className="h-6 md:h-8 w-[1px] bg-border/40 mx-0.5 md:mx-2 shrink-0" />
+        <div className="flex items-center gap-4">
+          <NavLinks activeSection={activeSection} onNavClick={handleNavClick} />
+          <div className="h-8 w-[1px] bg-border/40 mx-2" />
           <ThemeToggle />
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Top Header (Logo + Theme Toggle only) */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex md:hidden items-center justify-between px-6 py-4 glass border-b border-border/40 backdrop-blur-md">
+        <Logo />
+        <ThemeToggle />
+      </header>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92vw] max-w-md md:hidden">
+        <div className="glass rounded-[2rem] p-2 flex items-center justify-around shadow-2xl border border-border/40 backdrop-blur-xl">
+          {navItems.map((link) => {
+            const Icon = link.icon;
+            const isActive = activeSection === link.href || (activeSection === "" && link.href === "/#inicio");
+            
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`relative flex flex-col items-center gap-1 p-3 rounded-2xl transition-all duration-300 ${
+                  isActive ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="mobile-nav-bg"
+                    className="absolute inset-0 bg-primary/10 rounded-2xl -z-10"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <Icon className={`w-5 h-5 ${isActive ? "scale-110" : "scale-100"} transition-transform duration-300`} />
+                <span className="text-[9px] font-bold uppercase tracking-tighter">
+                  {link.shortLabel}
+                </span>
+              </a>
+            )
+          })}
+        </div>
+      </nav>
+    </>
   )
 }

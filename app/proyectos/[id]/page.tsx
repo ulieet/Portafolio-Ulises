@@ -89,7 +89,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4 flex items-center gap-2">
               <div className="w-8 h-[1px] bg-primary/30" /> Resumen
             </h3>
-            <h4 className="text-3xl font-bold tracking-tight">El Desafío</h4>
+            <h4 className="text-3xl font-bold tracking-tight">El Objetivo</h4>
           </div>
           <div className="lg:col-span-2">
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed font-medium">

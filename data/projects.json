@@ -1,15 +1,5 @@
 [
-  {
-    "id": "e-commerce-apple",
-    "title": "E-Commerce estilo Apple Store",
-    "description": "Plataforma moderna de comercio electrónico.",
-    "image": "/images/iphones.png",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
-    "category": "fullstack",
-    "liveUrl": "https://celulares-landing.vercel.app/",
-    "featured": false,
-    "hasDetails": false
-  },
+  
   {
     "id": "cuchamates",
     "title": "E-Commerce Landing Page",
@@ -33,13 +23,25 @@
     "hasDetails": false
   },
   {
-    "id": "web-corporativa",
-    "title": "Sitio Web Corporativo",
-    "description": "Web empresarial orientada a servicios profesionales.",
-    "image": "/images/empresarial.png",
+    "id": "web-estudio-contable",
+    "title": "Sitio Web Estudio Contable",
+    "description": "Web profesional para estudio contable.",
+    "image": "/images/contador.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
     "category": "frontend",
-    "liveUrl": "https://empresa-x-landing.vercel.app/",
+    "liveUrl": "https://contador-landing-gilt.vercel.app/",
+    "featured": false,
+    "hasDetails": false
+  },
+
+  {
+    "id": "e-commerce-apple",
+    "title": "E-Commerce estilo Apple Store",
+    "description": "Plataforma moderna de comercio electrónico.",
+    "image": "/images/iphones.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
+    "category": "fullstack",
+    "liveUrl": "https://celulares-landing.vercel.app/",
     "featured": false,
     "hasDetails": false
   },
@@ -54,30 +56,30 @@
     "featured": true,
     "hasDetails": false
   },
-  {
-    "id": "web-estudio-contable",
-    "title": "Sitio Web Estudio Contable",
-    "description": "Web profesional para estudio contable.",
-    "image": "/images/contador.png",
+    {
+    "id": "web-corporativa",
+    "title": "Sitio Web Corporativo",
+    "description": "Web empresarial orientada a servicios profesionales.",
+    "image": "/images/empresarial.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
     "category": "frontend",
-    "liveUrl": "https://contador-landing-gilt.vercel.app/",
+    "liveUrl": "https://empresa-x-landing.vercel.app/",
     "featured": false,
     "hasDetails": false
   },
+  
   {
     "id": "neuroclinic",
     "title": "NeuroSoft / NeuroClinic",
     "subtitle": "Sistema Integral de Gestión de Historias Clínicas con Extracción automatica NLP para su analisis completo",
     "accentColor": "oklch(0.65 0.12 280)",
-    "description": "Aplicacion web diseñada para un cliente neurologo con una necesidad real. Utilizar su gran volumen de informacion de historias clinicas para optimizar la digitalización  y análisis tecnico. El núcleo innovador radica en su capacidad para procesar archivos no estructurados (PDF/Word) y extraer automáticamente entidades críticas mediante NLP y lenguaje automatico.",
-    "image": "/images/neuro/reportegeneral2.png",
+"description": "Plataforma web desarrollada para un profesional del sector neurológico con el objetivo de gestionar, digitalizar y analizar grandes volúmenes de historias clínicas. El núcleo del sistema procesa documentos no estructurados (PDF y Word) mediante Procesamiento de Lenguaje Natural (NLP simbólico) para extraer automáticamente datos médicos críticos. Además, incorpora un motor de deduplicación inteligente y un dashboard de reportes estadísticos para facilitar la toma de decisiones clínicas, gestionando toda la persistencia de forma eficiente mediante estructuras JSON.",    "image": "/images/neuro/reportegeneral2.png",
     "technologies": ["FastAPI", "Next.js", "TypeScript", "Python", "Tailwind CSS", "Shadcn UI", "NLP", "JSON Storage"],
     "category": "Arquitectura Backend & Fullstack",
     "liveUrl": "#",
     "featured": true,
     "hasDetails": true,
-    "academicContext": "Proyecto Final para la materia Seminario Integrador — Habilitación del título de Analista en Sistemas de Información.",
+    "academicContext": "Proyecto Final para la materia Seminario Integrador — Habilitación profesional del título de Analista en Sistemas de Información.",
     "features": [
       {
         "title": "Motor de Extracción y NLP",
