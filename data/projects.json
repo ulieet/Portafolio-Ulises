@@ -143,31 +143,74 @@
 ]
   },
   {
-    "id": "OdontoLeto",
-    "title": "OdontoLeto",
-    "subtitle": "Herramienta de Optimización e Investigación Operativa",
-    "accentColor": "oklch(0.65 0.12 160)",
-    "description": "Una herramienta interactiva desarrollada para resolver problemas matemáticos complejos de la materia Operaciones de Investigación. Incluye calculadoras automatizadas para el método Simplex y algoritmos para determinar distribuciones estadísticas como Normal y Chi-cuadrado.",
-    "image": "",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Matemática Aplicada"],
-    "category": "Lógica Algorítmica & Frontend",
-    "liveUrl": "#",
-    "featured": false,
-    "hasDetails": true,
-    "academicContext": "Proyecto desarrollado para la materia Desarrollo de Software",
-    "features": [
-      {
-        "title": "Cálculo de Método Simplex",
-        "description": "Implementación del algoritmo Simplex para programación lineal, mostrando tablas de iteración paso a paso para maximizar o minimizar funciones objetivo."
-      },
-      {
-        "title": "Distribuciones Estadísticas",
-        "description": "Módulos integrados para procesar y calcular variables de distribución Normal y pruebas de bondad de ajuste mediante Chi-cuadrado."
-      }
-    ],
-    "architecture": {
-      "frontend": "Desarrollado íntegramente en el cliente con Next.js, utilizando estados complejos de React para manejar las matrices matemáticas y renderizar dinámicamente las tablas de resultados."
+  "id": "OdontoLeto",
+  "title": "OdontoLeto",
+  "subtitle": "Plataforma integral para la gestión de consultorios odontológicos",
+  "accentColor": "oklch(0.65 0.12 160)",
+  "description": "Plataforma web orientada a odontólogos y ortodoncistas para gestionar pacientes, tratamientos y la evolución clínica a través de imágenes y registros cronológicos, optimizando la comunicación y organización de turnos.",
+  "image": "/imagenes/logo1.png",
+  "technologies": [
+    "React.js",
+    "JavaScript",
+    "CSS3",
+    "Python 3",
+    "Django",
+    "Django REST Framework",
+    "SQLite3"
+  ],
+  "category": "Desarrollo Full-Stack",
+  "liveUrl": "#",
+  "featured": false,
+  "hasDetails": true,
+  "academicContext": "Proyecto desarrollado para la materia Desarrollo de Software (Comisión S32)",
+  "features": [
+    {
+      "title": "Gestión Integral e Historial de Pacientes",
+      "description": "Administración ordenada de la información de pacientes, incluyendo un historial completo para el registro de pagos y antecedentes médicos."
     },
-    "images": []
-  }
+    {
+      "title": "Odontograma Interactivo",
+      "description": "Herramienta visual integrada que permite al profesional registrar, ubicar y visualizar diferentes afecciones o tratamientos específicos en cada pieza dental de forma individual."
+    },
+    {
+      "title": "Seguimiento Clínico",
+      "description": "Registro detallado y cronológico de tratamientos odontológicos para un control preciso de la evolución de cada caso."
+    },
+    {
+      "title": "Administración de Turnos",
+      "description": "Sistema integrado para agendar citas y gestionar recordatorios de manera eficiente."
+    }
+  ],
+  "architecture": {
+    "frontend": "Desarrollado como una aplicación de una sola página (SPA) con React.js y JavaScript (JSX), utilizando Context API para el manejo de estado global y CSS3 para la maquetación.",
+    "backend": "Arquitectura basada en una API REST construida con Python 3 y Django REST Framework, utilizando SQLite3 para el almacenamiento de datos en desarrollo."
+  },
+  "images": [
+    {
+      "url": "/imagenes/login.png",
+      "description": "Pantalla de Autenticación (Login)",
+      "alt": "Vista del inicio de sesión del sistema OdontoLeto"
+    },
+    {
+      "url": "/imagenes/home.png",
+      "description": "Dashboard Principal (Home)",
+      "alt": "Vista principal del sistema con el resumen del consultorio"
+    },
+    {
+      "url": "/imagenes/pacientes.png",
+      "description": "Gestión de Pacientes",
+      "alt": "Sección del listado y administración de pacientes"
+    },
+    {
+      "url": "/imagenes/tratamientos.png",
+      "description": "Odontograma y Tratamientos",
+      "alt": "Vista del odontograma interactivo y carga de tratamientos"
+    },
+    {
+      "url": "/imagenes/turnos.png",
+      "description": "Agenda de Turnos",
+      "alt": "Calendario y gestión de turnos para los pacientes"
+    }
+  ]
+}
 ]
