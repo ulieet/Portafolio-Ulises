@@ -2,8 +2,8 @@
   
   {
     "id": "cuchamates",
-    "title": "E-Commerce Landing Page",
-    "description": "Landing page para tienda de mates argentinos.",
+    "title": "E-Commerce Landing Page Cucha Mates",
+    "description": "Incluye carrito, login, productos, filtros de compra y otras secciones a medida",
     "image": "/images/mates.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Radix"],
     "category": "fullstack",
@@ -13,8 +13,8 @@
   },
   {
     "id": "ignatech",
-    "title": "Landing Page Empresa de Software",
-    "description": "Sitio corporativo moderno y profesional.",
+    "title": "Landing Page Empresa de Software GrupoIgnatech",
+    "description": "Sitio corporativo hecho a medida moderno y profesional.",
     "image": "/images/ignatech.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
     "category": "frontend",
@@ -22,9 +22,21 @@
     "featured": true,
     "hasDetails": false
   },
+
+   {
+    "id": "landing-construccion",
+    "title": "Landing Page Empresa de Construcción Box-steel",
+    "description": "Landing personalizada adaptada a identidad visual.",
+    "image": "/images/box.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Radix"],
+    "category": "frontend",
+    "liveUrl": "https://boxsteel.vercel.app/",
+    "featured": true,
+    "hasDetails": false
+  },
   {
     "id": "web-estudio-contable",
-    "title": "Sitio Web Estudio Contable",
+    "title": "Sitio Web generico Estudio Contable",
     "description": "Web profesional para estudio contable.",
     "image": "/images/contador.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
@@ -36,7 +48,7 @@
 
   {
     "id": "e-commerce-apple",
-    "title": "E-Commerce estilo Apple Store",
+    "title": "E-Commerce generico estilo Apple Store",
     "description": "Plataforma moderna de comercio electrónico.",
     "image": "/images/iphones.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
@@ -45,20 +57,10 @@
     "featured": false,
     "hasDetails": false
   },
-  {
-    "id": "landing-construccion",
-    "title": "Landing Page Empresa de Construcción",
-    "description": "Landing personalizada adaptada a identidad visual.",
-    "image": "/images/box.png",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Radix"],
-    "category": "frontend",
-    "liveUrl": "https://boxsteel.vercel.app/",
-    "featured": true,
-    "hasDetails": false
-  },
+ 
     {
     "id": "web-corporativa",
-    "title": "Sitio Web Corporativo",
+    "title": "Sitio Web generico Corporativo",
     "description": "Web empresarial orientada a servicios profesionales.",
     "image": "/images/empresarial.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn"],
@@ -148,7 +150,7 @@
   "subtitle": "Plataforma integral para la gestión de consultorios odontológicos",
   "accentColor": "oklch(0.65 0.12 160)",
   "description": "Plataforma web orientada a odontólogos y ortodoncistas para gestionar pacientes, tratamientos y la evolución clínica a través de imágenes y registros cronológicos, optimizando la comunicación y organización de turnos.",
-  "image": "/imagenes/logo1.png",
+  "image": "/images/odontoleto/odontograma.png",
   "technologies": [
     "React.js",
     "JavaScript",
@@ -187,30 +189,41 @@
   },
   "images": [
     {
-      "url": "/imagenes/login.png",
+      "url": "/images/odontoleto/login.PNG",
       "description": "Pantalla de Autenticación (Login)",
       "alt": "Vista del inicio de sesión del sistema OdontoLeto"
     },
     {
-      "url": "/imagenes/home.png",
+      "url": "/images/odontoleto/dashboard.png",
       "description": "Dashboard Principal (Home)",
       "alt": "Vista principal del sistema con el resumen del consultorio"
     },
     {
-      "url": "/imagenes/pacientes.png",
+      "url": "/images/odontoleto/pacientes.png",
       "description": "Gestión de Pacientes",
       "alt": "Sección del listado y administración de pacientes"
     },
     {
-      "url": "/imagenes/tratamientos.png",
-      "description": "Odontograma y Tratamientos",
-      "alt": "Vista del odontograma interactivo y carga de tratamientos"
+      "url": "/images/odontoleto/detallepaciente.png",
+      "description": "Vista general del paciente",
+      "alt": "Vista general del paciente "
     },
     {
-      "url": "/imagenes/turnos.png",
-      "description": "Agenda de Turnos",
-      "alt": "Calendario y gestión de turnos para los pacientes"
+      "url": "/images/odontoleto/odontograma.png",
+      "description": "Odontograma por paciente completamente editable",
+      "alt": "Odontograma paciente"
+    },
+     {
+      "url": "/images/odontoleto/turnos.png",
+      "description": "Gestion de turnos con calendario y recordatorios",
+      "alt": "Turnoscalendario"
+    },
+     {
+      "url": "/images/odontoleto/tratamiento.png",
+      "description": "Seccion de registro de tratamiento",
+      "alt": "Registrar tratamiento"
     }
+    
   ]
 }
 ]
